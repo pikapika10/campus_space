@@ -391,8 +391,9 @@ module.exports = {
             await newSubject.save()
             const students = await Student.find({ department, year })
             if (students.length === 0) {
-                errors.department = "No branch found for given subject"
-                return res.status(400).json(errors)
+                // errors.department = "No branch found for given subject"
+                // return res.status(400).json(errors)
+                res.status(200).json({ newSubject })
             }
             else {
                 for (var i = 0; i < students.length; i++) {

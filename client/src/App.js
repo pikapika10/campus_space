@@ -11,6 +11,8 @@ import { setAdminUser, adminLogout, adminGetAllStudent } from './redux/action/ad
 
 import { setStudentUser, studentLogout } from './redux/action/studentAction'
 
+import "./App.css"
+
 
 import LoginPage from './Pages/LoginPage'
 import Home from './Pages/StudentHome'

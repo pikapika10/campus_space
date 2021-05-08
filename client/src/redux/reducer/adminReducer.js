@@ -9,7 +9,6 @@ const initialState = {
     adminAddStudentFlag: false,
     adminAddAdminFlag: false,
     adminAddSubjectFlag: false,
-    allSubject: {},
     allFaculty: [],
     allStudent: [],
     allSubject: []

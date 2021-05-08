@@ -31,6 +31,7 @@ module.exports = {
             return res.status(400).json(errors);
         }
         const { registrationNumber, password } = req.body;
+       
 
         const student = await Student.findOne({ registrationNumber })
         if (!student) {
