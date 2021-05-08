@@ -163,7 +163,7 @@ const FacultyStudentLoginPags = () => {
          }}
        >
          <div>
-           <h3 className="text-center"><i class="fas fa-user"></i> STUDENT</h3>
+           <h3 className="text-center"><i class="fas fa-user"></i> Hello Pika Pika</h3>
            <form noValidate onSubmit={studentFormHandler}>
              <div className="form-group">
                <label htmlFor="studentId">Registration Number</label>
