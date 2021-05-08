@@ -1,7 +1,8 @@
 
 
 #trail {
-    background: url('./Images/green-chameleon-s9CC2SKySJM-unsplash.jpg')
-    center/cover no-repeat fixed ;
+    /* background: url('./Images/green-chameleon-s9CC2SKySJM-unsplash.jpg')
+    center/cover no-repeat fixed ; */
+    background-color: #393e46;
     
 }
