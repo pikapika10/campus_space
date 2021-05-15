@@ -12,7 +12,6 @@ const RecieverUserDetails = (props) => {
     const [registrationNumber, setRegistrationNumber] = useState("")
   
 
-
     useEffect(() => {
         setRegistrationNumber(props.match.params.registrationNumber)
         dispatch(getStudentByRegName(registrationNumber))

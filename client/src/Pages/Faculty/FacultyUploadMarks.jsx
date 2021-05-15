@@ -168,8 +168,8 @@ const FacultyUploadMarks = () => {
 
                                     })} id="examId">
                                     <option>Select</option>
-                                    <option value="CycleTest1">Cycle Test 1</option>
-                                    <option value="CycleTest2">Cylce Test 2</option>
+                                    <option value="CycleTest1">Periodical 1</option>
+                                    <option value="CycleTest2">Periodical 2</option>
                                     <option value="Semester">Semester</option>
                                 </select>
                                 {errorHelper.exam && (<div classNameName="invalid-feedback">{errorHelper.exam}</div>)}

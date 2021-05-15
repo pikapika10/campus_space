@@ -47,8 +47,8 @@ const AdminGetAllSubjects = () => {
                                             <option value="C.S.E">C.S.E</option>
                                             <option value="E.E.E">E.E.E</option>
                                             <option value="I.T">I.T</option>
-                                            <option value="Mechanical">Mechanical</option>
-                                            <option value="Civil">Civil</option>
+                                            <option value="Mechanical">Mechatronics</option>
+                                            <option value="Civil">Biotechnology</option>
                                         </select>
                                         {error.department && (<div className="invalid-feedback">{error.department}</div>)}
                                     </div>

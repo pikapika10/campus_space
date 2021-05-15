@@ -10,8 +10,6 @@ const validateAdminRegisterInput = (data) => {
     data.dob = !isEmpty(data.dob) ? data.dob : '';
     data.contactNumber = !isEmpty(data.contactNumber) ? data.contactNumber : '';
     
-
-   
     if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
         errors.name = 'Name must be between 2 and 30 characters';
     }
@@ -43,7 +41,7 @@ const validateAdminRegisterInput = (data) => {
     }
 
     if (Validator.isEmpty(data.contactNumber)) {
-        errors.contactNumber = 'DOB field is required';
+        errors.contactNumber = 'Contact number is required';
     }
 
     return {
