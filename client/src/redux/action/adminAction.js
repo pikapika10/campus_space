@@ -1,6 +1,7 @@
 import axios from 'axios';
 import setAuthToken from '../utils/setAuthToken'
 import jwt_decode from 'jwt-decode';
+import {Base_url} from '../../Config/Api';
 import {
     SET_ADMIN, SET_ERRORS, 
     GET_SUBJECTS
@@ -80,7 +81,7 @@ export const adminLogin = (adminCredential) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/admin/login",
+                url: {Base_url}+"/api/admin/login",
                 data: adminCredential
             })
             const { token } = data;
@@ -107,7 +108,7 @@ export const adminGetAllSubjects = () => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: "http://localhost:4000/api/admin/getSubjects",
+                url: {Base_url}+"/api/admin/getSubjects",
             })
             dispatch(getSubjctsHelper(data))
         }
@@ -122,7 +123,7 @@ export const adminAddFaculty = (facultyCredential) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/admin/addFaculty",
+                url: {Base_url}+"/api/admin/addFaculty",
                 data: facultyCredential
             })
             dispatch(adminAddFacultyFlag(true))
@@ -142,7 +143,7 @@ export const adminAddStudent = (studentCredential) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/admin/addStudent",
+                url: {Base_url}+"/api/admin/addStudent",
                 data: studentCredential
             })
             dispatch(adminAddStudentFlag(true))
@@ -162,7 +163,7 @@ export const adminAddSubject = (subjectCredential) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/admin/addSubject",
+                url: {Base_url}+"/api/admin/addSubject",
                 data: subjectCredential
             })
             dispatch(adminAddSubjectFlag(true))
@@ -184,7 +185,7 @@ export const adminAddAdmin = (adminCredentails) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/admin/addAdmin",
+                url: {Base_url}+"/api/admin/addAdmin",
                 data: adminCredentails
             })
             dispatch(adminAddAdminFlag(true))
@@ -205,7 +206,7 @@ export const adminGetAllFaculty = (department) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/admin/getAllFaculty",
+                url: {Base_url}+"/api/admin/getAllFaculty",
                 data: department
             })
             dispatch(adminGetAllFacultyHelper(data.result))
@@ -224,7 +225,7 @@ export const adminGetAllStudent = (searchCredentials) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/admin/getAllStudent",
+                url: {Base_url}+"/api/admin/getAllStudent",
                 data: searchCredentials
             })
             dispatch(adminGetAllStudentHelper(data.result))
@@ -243,7 +244,7 @@ export const adminGetAllSubject = (department) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/admin/getAllSubject",
+                url: {Base_url}+"/api/admin/getAllSubject",
                 data: department
             })
             dispatch(adminGetAllSubjectHelper(data.result))

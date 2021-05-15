@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { adminLogout } from '../redux/action/adminAction'
+import Logo from "../Style/Images/Logo.png"
 
 
 const Home = () => {
@@ -23,7 +24,7 @@ const Home = () => {
         <div className="container-fluid">
           
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <h4 className="navbar-brand mt-1" href="">SRM</h4>
+            <span  ><img src={Logo} alt="Logo" height="35px" /></span>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

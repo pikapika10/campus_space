@@ -17,8 +17,8 @@ const StudentSubjectList = () => {
                 <HomeHelper />
                 <div className="container">
                     <div className="row mt-5">
-                        <div className="col-md-6 m-auto">
-                            <table className="table border">
+                        <div className="col-md-12 ">
+                            <table className="table border table-striped">
                                 <thead>
                                     <tr>
                                         <th scope="col">S.No</th>

@@ -63,8 +63,7 @@ io.on('connection', (socket) => {
     })
     socket.on("private message", (message) => {
         io.to(message.room).emit('new Message', {
-            message: message.message,
-            sender: message.sender
+           ...message
         });
    })
     socket.on('disconnect', function () {

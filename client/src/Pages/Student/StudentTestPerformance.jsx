@@ -13,8 +13,6 @@ const StudentTestPerformance = () => {
         dispatch(getMarks())
     }, [])
 
-
-
     return (
 
         <>
@@ -25,10 +23,10 @@ const StudentTestPerformance = () => {
 
                     {store.student.allMarks.CycleTest1 &&
                         <div className="row mt-3">
-                            <div className="col-md-8 m-auto">
+                            <div className="col-md-12 ">
                                 {store.student.allMarks.CycleTest1.length !== 0 ? <>
-                                    <h4>Periodical 1</h4>
-                                    <table className="table border">
+                                    <div className="bg-primary p-2 rounded  lead text-light">Periodical 1</div>
+                                    <table className="table border table-striped">
                                         <thead>
                                             <tr>
                                                 <th scope="col">S.No</th>
@@ -62,10 +60,11 @@ const StudentTestPerformance = () => {
 
                     {store.student.allMarks.CycleTest2 &&
                         <div className="row mt-3">
-                            <div className="col-md-8 m-auto">
+                            <div className="col-md-12">
                                 {store.student.allMarks.CycleTest2.length !== 0 ? <>
-                                    <h4>Periodical 2</h4>
-                                    <table className="table">
+                                    <div className="bg-primary p-2 rounded lead text-light">Periodical 2</div>
+
+                                    <table className="table border table-striped">
                                         <thead>
                                             <tr>
                                                 <th scope="col">S.No</th>
@@ -97,10 +96,11 @@ const StudentTestPerformance = () => {
 
                     {store.student.allMarks.Semester &&
                         <div className="row mt-3">
-                            <div className="col-md-8 m-auto">
+                            <div className="col-md-12 ">
                                 {store.student.allMarks.Semester.length !== 0 ? <>
-                                    <h4>Semester</h4>
-                                    <table className="table">
+                                    <div className="bg-primary p-2 rounded lead text-light">Semester</div>
+
+                                    <table className="table border table-striped">
                                         <thead>
                                             <tr>
                                                 <th scope="col">S.No</th>
