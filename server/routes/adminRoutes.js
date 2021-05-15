@@ -12,15 +12,16 @@ const {
   getAllSubjects,
   addAdmin,
   getAllStudent,
+  getAllFaculties,
   getAllSubject,
 } = require("../controller/adminController");
 
 router.post("/login", adminLogin);
 
 router.post(
-  "/getAllFaculty",
+  "/getFaculties",
   passport.authenticate("jwt", { session: false }),
-  getAllFaculty
+  getAllFaculties
 );
 
 router.post(
@@ -47,7 +48,7 @@ router.post(
   addFaculty
 );
 router.get(
-  "/getFaculties",
+  "/getAllFaculty",
   passport.authenticate("jwt", { session: false }),
   getAllFaculty
 );

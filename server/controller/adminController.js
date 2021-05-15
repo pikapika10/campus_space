@@ -392,7 +392,7 @@ module.exports = {
         .json({ message: `error in getting all Subjects", ${err.message}` });
     }
   },
-  getAllFaculty: async (req, res, next) => {
+  getAllFaculties: async (req, res, next) => {
     try {
       const { department } = req.body;
       const allFaculties = await Faculty.find({ department });

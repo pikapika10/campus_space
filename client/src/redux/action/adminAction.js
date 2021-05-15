@@ -191,13 +191,16 @@ export const adminAddAdmin = (adminCredentails) => {
 export const adminGetAllFaculty = (department) => {
   return async (dispatch) => {
     try {
+			adminGetAllFacultyHelper([])
       const { data } = await axios({
         method: "Post",
-        url: Base_url  + "/api/admin/getAllFaculty",
+        url: Base_url  + "/api/admin/getFaculties",
         data: department,
       });
+			console.log(data);
       dispatch(adminGetAllFacultyHelper(data.result));
     } catch (err) {
+			console.log(err);
       dispatch({
         type: SET_ERRORS,
         payload: err.response.data,

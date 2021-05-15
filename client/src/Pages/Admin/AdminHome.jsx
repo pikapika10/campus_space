@@ -3,73 +3,110 @@ import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import AdminHomeHelper from "../../Components/AdminHomeHelper";
 
+var Barcode = require('react-barcode');
+
 const AdminHome = () => {
   const store = useSelector((store) => store);
 
+	
+
   const history = useHistory();
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage:
+          "url(https://www.transparenttextures.com/patterns/carbon-fibre-v2.png)",
+        height: "100vh",
+        overflowY: "auto",
+      }}
+    >
       {store.admin.isAuthenticated ? (
         <>
           <AdminHomeHelper />
           <div className="container">
-            <div className="row mt-5">
-              <div className="col-2"></div>
-              <div className="col-8">
-                <div className="row">
-                  <div className="col-md-5">
-                    <div className="card" style={{ width: "18rem" }}>
-                      <img
-                        className="card-img-top"
-                        src={store.admin.admin.avatar}
-                        alt="Card image cap"
-                      />
-                      <div className="card-body">
-                        <h5 className="card-title">{store.admin.admin.name}</h5>
-                        <h5 className="card-title">
-                          {store.admin.admin.registrationNumber}
-                        </h5>
-                        {/* <Link to='/faculty/updateProfile'>UPDATE PROFILE</Link> */}
-                      </div>
-                    </div>
+            <div className="row  mt-4 bg-light p-4 shadow-lg rounded-lg ">
+              <div className="col-md-5 p-2 ">
+                <div className="card bg-light mx-auto" style={{maxWidth:"300px"}} >
+                  <div className="bg-danger rounded-top p-2 text-center font-weight-bold text-white">
+                    Admin
                   </div>
-                  <div className="col-md-7">
-                    <table className="table border">
-                      <tbody>
-                        <tr>
-                          <td>Name</td>
-                          <td>{store.admin.admin.name}</td>
-                        </tr>
-                        <tr>
-                          <td>Email</td>
-                          <td>{store.admin.admin.email}</td>
-                        </tr>
-                        <tr>
-                          <td>Registration Number</td>
-                          <td>{store.admin.admin.registrationNumber}</td>
-                        </tr>
-                        <tr>
-                          <td>Joining Year</td>
-                          <td>{store.admin.admin.joiningYear}</td>
-                        </tr>
-                        <tr>
-                          <td>Department</td>
-                          <td>{store.admin.admin.department}</td>
-                        </tr>
-                        <tr>
-                          <td>Contact Number</td>
-                          <td>
-                            {store.admin.admin.contactNumber
-                              ? store.admin.admin.contactNumber
-                              : "NA"}
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div className="bg-blue text-center admin-card">
+                    <img
+                      className="  bg-white border rounded-circle my-3"
+                      style={{
+                        height: "150px",
+                        width: "150px",
+                        objectFit: "contain",
+                      }}
+                      src={store.admin.admin.avatar}
+                      alt="Card image cap"
+                    />
+                  </div>
+                  <div className="bg-blue text-left">
+                    <div className="admin-card-bottom bg-white py-3 px-3">
+                      <table className="table table-borderless mb-0">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div
+                                className="rounded-circle border bg-light-blue text-blue text-center p-2 font-18"
+                                style={{ height: "40px", width: "40px" }}
+                              >
+                                <i class="fas fa-user"></i>
+                              </div>
+                            </td>
+                            <td className="lead pt-3">
+                              {store.admin.admin.name}
+                            </td>
+                          </tr>
+                          <tr>
+                            <th className="text-center">ID:</th>
+                            <td>{store.admin.admin.registrationNumber}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+											<div className="text-center"><Barcode value={store.admin.admin.registrationNumber } height="25" /></div>
+                    </div>
+                    {/* <Link to='/faculty/updateProfile'>UPDATE PROFILE</Link> */}
                   </div>
                 </div>
               </div>
-              <div className="col-2"></div>
+              <div className="col-md-7  ">
+							<div className="p-2 rounded-top bg-primary text-white text-center w-100 lead font-weight-bold">Admin details</div>
+                <table className="table border table-striped">
+									
+                  <tbody>
+                    <tr>
+                      <th>Name</th>
+                      <td>{store.admin.admin.name}</td>
+                    </tr>
+                    <tr>
+                      <th>Email</th>
+                      <td>{store.admin.admin.email}</td>
+                    </tr>
+                    <tr>
+                      <th>Registration Number</th>
+                      <td>{store.admin.admin.registrationNumber}</td>
+                    </tr>
+                    <tr>
+                      <th>Joining Year</th>
+                      <td>{store.admin.admin.joiningYear}</td>
+                    </tr>
+                    <tr>
+                      <th>Department</th>
+                      <td>{store.admin.admin.department}</td>
+                    </tr>
+                    <tr>
+                      <th>Contact Number</th>
+                      <td>
+                        {store.admin.admin.contactNumber
+                          ? store.admin.admin.contactNumber
+                          : "NA"}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </>
