@@ -17,7 +17,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const logoutHandler = () => {
     dispatch(adminLogout());
-    history.push("/");
+    history.push("/adminLogin");
   };
   return (
     <div className=" shadow">

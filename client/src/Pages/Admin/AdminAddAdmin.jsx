@@ -131,7 +131,7 @@ const AdminAddAdmin = () => {
                             </form>
                         </div>
                     </div>
-                </div></>) : (history.push('/'))}
+                </div></>) : (history.push('/adminLogin'))}
 
         </div>
 

@@ -74,6 +74,10 @@
   font-size: 18px;
 }
 
+.font-22{
+  font-size: 22px;
+}
+
 .active{
   background-color: #dfdbff !important;
   border-radius: 6px !important;
@@ -89,4 +93,9 @@
   transform: scale(1.05);
   background-color: #dfdbff;
   border-radius: 6px;
+}
+
+.admin-login-background{
+  background: rgb(59,59,60);
+background: linear-gradient(90deg, rgba(59,59,60,1) 0%, rgba(41,41,41,1) 48%, rgba(73,66,60,1) 69%, rgba(107,80,57,1) 92%, rgba(126,84,49,1) 100%);
 }

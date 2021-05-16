@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import AdminHomeHelper from "../../Components/AdminHomeHelper";
@@ -9,6 +9,11 @@ const AdminHome = () => {
   const store = useSelector((store) => store);
 
 	
+  useEffect(() => {
+    if (!store.admin.isAuthenticated) {
+      history.push("/adminLogin");
+    }
+  }, [store.admin.isAuthenticated]);
 
   const history = useHistory();
   return (
