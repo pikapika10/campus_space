@@ -15,7 +15,7 @@ const AdminHome = () => {
     <div
       style={{
         backgroundImage:
-          "url(https://www.transparenttextures.com/patterns/carbon-fibre-v2.png)",
+          "url(https://cdn.msisurfaces.com/images/colornames/gradient/absolute-black-granite.jpg)",
         height: "100vh",
         overflowY: "auto",
       }}
@@ -26,11 +26,11 @@ const AdminHome = () => {
           <div className="container">
             <div className="row  mt-4 bg-light p-4 shadow-lg rounded-lg ">
               <div className="col-md-5 p-2 ">
-                <div className="card bg-light mx-auto" style={{maxWidth:"300px"}} >
-                  <div className="bg-danger rounded-top p-2 text-center font-weight-bold text-white">
+                <div className="card bg-white mx-auto" style={{maxWidth:"300px"}} >
+                  <div className="bg-green rounded-top p-2 text-center font-weight-bold text-white">
                     Admin
                   </div>
-                  <div className="bg-blue text-center admin-card">
+                  <div className="bg-info text-center admin-card">
                     <img
                       className="  bg-white border rounded-circle my-3"
                       style={{
@@ -42,14 +42,14 @@ const AdminHome = () => {
                       alt="Card image cap"
                     />
                   </div>
-                  <div className="bg-blue text-left">
+                  <div className="bg-info text-left">
                     <div className="admin-card-bottom bg-white py-3 px-3">
                       <table className="table table-borderless mb-0">
                         <tbody>
                           <tr>
                             <td>
                               <div
-                                className="rounded-circle border bg-light-blue text-blue text-center p-2 font-18"
+                                className="rounded-circle border bg-green text-blue text-center p-2 font-18"
                                 style={{ height: "40px", width: "40px" }}
                               >
                                 <i class="fas fa-user"></i>
@@ -61,7 +61,7 @@ const AdminHome = () => {
                           </tr>
                           <tr>
                             <th className="text-center">ID:</th>
-                            <td>{store.admin.admin.registrationNumber}</td>
+                            <td >{store.admin.admin.registrationNumber}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -72,7 +72,7 @@ const AdminHome = () => {
                 </div>
               </div>
               <div className="col-md-7  ">
-							<div className="p-2 rounded-top bg-primary text-white text-center w-100 lead font-weight-bold">Admin details</div>
+							<div className="p-2 rounded-top bg-info text-white text-center w-100 lead font-weight-bold">Admin details</div>
                 <table className="table border table-striped">
 									
                   <tbody>
