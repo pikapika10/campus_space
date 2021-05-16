@@ -109,7 +109,7 @@ const AdminGetAllSubjects = () => {
                             </div>
                         </div>
                     </div>
-                </> : (history.push('/'))}
+                </> : (history.push('/adminLogin'))}
             </div>
             
         </div>

@@ -114,7 +114,7 @@ const AdminGetAllFaculty = () => {
                         </div>
                     </div>
                 </div>
-            </> : (history.push('/'))}
+            </> : (history.push('/adminLogin'))}
         </div>
     )
 }
