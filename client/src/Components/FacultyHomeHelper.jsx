@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector} from 'react-redux'
 import {facultyLogout} from '../redux/action/facultyAction'
-
+import Logo from "../Style/Images/Logo.png";
 
 
 const Home = () => {
@@ -26,31 +26,33 @@ const Home = () => {
             <div className="row">
                 <div className="col">
                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                        <h4 className="navbar-brand mt-1" href="">SRM</h4>
+                    <span>
+              <img style={{filter:"invert(1)"}} src={Logo} alt="Logo" height="25px" />
+            </span>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item active">
-                                    <button type="button" className="btn"><Link to="/home"><li>{name.toUpperCase()}</li></Link></button>
+                                    <button type="button" className="btn"><Link to="/home"><li>{name}</li></Link></button>
                                 </li>
                                 <li className="nav-item">
-                                    <button type="button" className="btn"><Link to="/faculty/updateProfile"><li>UPDATE PROFILE</li></Link></button>
+                                    <button type="button" className="btn"><Link to="/faculty/updateProfile"><li>Update Profile</li></Link></button>
                                 </li>
                                 <li className="nav-item">
-                                    <button type="button" className="btn"><Link to="/attendenceFaculty"><li>MARK ATTENDANCE</li></Link></button>
+                                    <button type="button" className="btn"><Link to="/attendenceFaculty"><li>Mark Attendance</li></Link></button>
                                 </li>
                                 <li className="nav-item">
-                                    <button type="button" className="btn"><Link to="/faculty/uploadMarks"><li>UPLOAD MARKS</li></Link></button>
+                                    <button type="button" className="btn"><Link to="/faculty/uploadMarks"><li>Upload Marks</li></Link></button>
                                 </li>
                                 <li className="nav-item">
-                                    <button type="button" className="btn"><Link to="/faculty/updatePassword"><li>UPDATE PASSWORD</li></Link></button>
+                                    <button type="button" className="btn"><Link to="/faculty/updatePassword"><li>Update Password</li></Link></button>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <button style={{listStyle:"None"}} onClick={logoutHandler} type="button" className="btn"><li>LOGOUT</li></button>
+                            <button style={{listStyle:"None"}} onClick={logoutHandler} type="button" className="btn"><li>Logout</li></button>
                         </div>
                     </nav>
                 </div>
