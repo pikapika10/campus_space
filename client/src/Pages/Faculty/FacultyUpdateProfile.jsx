@@ -52,6 +52,8 @@ const FacultyUpdateProfile = () => {
 		}
 		if(facultyData.avatar){
 			setAvatar(facultyData.avatar)
+			let imageUrl=document.getElementById("outputId");
+			imageUrl.src = facultyData.avatar;
 		}
 	},[])
 
@@ -99,7 +101,6 @@ const FacultyUpdateProfile = () => {
                     <label htmlFor="numberId">Contact Number</label>
                     <input
                       onChange={(e) => setContactNumber(e.target.value)}
-                      required
                       type="number"
                       className="form-control"
                       id="numberId"

@@ -81,7 +81,7 @@ const FacultyUploadMarks = () => {
                                     <option>Select</option>
                                     <option value={store.faculty.faculty.faculty.department}>{store.faculty.faculty.faculty.department}</option>
                                 </select>
-                                {error.department && (<div classNameName="invalid-feedback">{error.department}</div>)}
+                                {error.department && (<div className="invalid-feedback">{error.department}</div>)}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="yearId">Year</label>
@@ -97,7 +97,7 @@ const FacultyUploadMarks = () => {
                                     <option value="4">4</option>
                                 </select>
 
-                                {error.year && (<div classNameName="invalid-feedback">{error.year}</div>)}
+                                {error.year && (<div className="invalid-feedback">{error.year}</div>)}
                             </div>
                             {/* <div className="form-group">
                                 <label htmlFor="semesterId">Semester</label>
@@ -116,7 +116,7 @@ const FacultyUploadMarks = () => {
                                     <option value="7">7</option>
                                     <option value="8">8</option>
                                 </select>
-                                {error.year && (<div classNameName="invalid-feedback">{error.year}</div>)}
+                                {error.year && (<div className="invalid-feedback">{error.year}</div>)}
                             </div> */}
                             <div className="form-group">
                                 <label htmlFor="sectionId">Section</label>
@@ -133,7 +133,7 @@ const FacultyUploadMarks = () => {
                                     <option value="E">E</option>
                                     <option value="F">F</option>
                                 </select>
-                                {error.section && (<div classNameName="invalid-feedback">{error.section}</div>)}
+                                {error.section && (<div className="invalid-feedback">{error.section}</div>)}
                             </div>
                             <button type="submit" className="btn btn-primary">Search</button>
                         </form>
@@ -158,7 +158,7 @@ const FacultyUploadMarks = () => {
                                         )
                                     }
                                 </select>
-                                {errorHelper.subjectCode && (<div classNameName="invalid-feedback">{errorHelper.subjectCode}</div>)}
+                                {errorHelper.subjectCode && (<div className="invalid-feedback">{errorHelper.subjectCode}</div>)}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="examId">Exam</label>
@@ -172,7 +172,7 @@ const FacultyUploadMarks = () => {
                                     <option value="CycleTest2">Periodical 2</option>
                                     <option value="Semester">Semester</option>
                                 </select>
-                                {errorHelper.exam && (<div classNameName="invalid-feedback">{errorHelper.exam}</div>)}
+                                {errorHelper.exam && (<div className="invalid-feedback">{errorHelper.exam}</div>)}
                             </div>
 
                             <div className="form-group">
@@ -183,7 +183,7 @@ const FacultyUploadMarks = () => {
 
                                     })} id="marksId"
                                     value={totalMarks} onChange={(e) => setTotalMarks(e.target.value)} />
-                                {errorHelper.totalMarks && (<div classNameName="invalid-feedback">{errorHelper.totalMarks}</div>)}
+                                {errorHelper.totalMarks && (<div className="invalid-feedback">{errorHelper.totalMarks}</div>)}
                             </div>
 
                             <table className="table">

@@ -2,7 +2,7 @@ import axios from 'axios';
 import setAuthToken from '../utils/setAuthToken'
 import jwt_decode from 'jwt-decode';
 import { SET_STUDENT, SET_ERRORS_HELPER, SET_ERRORS, STUDENT_UPDATE_PASSWORD, SET_OTP, SET_FLAG } from '../actionTypes'
-
+import {Base_url}  from "../../Config/Api";
 
 
 
@@ -92,7 +92,7 @@ export const studentLogin = (studentCredential) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/student/login",
+                url: Base_url + "/api/student/login",
                 data: studentCredential
             })
             const { token } = data;
@@ -121,7 +121,7 @@ export const studentUpdatePassword = (passwordData) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/student/updatePassword",
+                url: Base_url + "/api/student/updatePassword",
                 data: passwordData
             })
             alert("Password Updated Successfully")
@@ -140,7 +140,7 @@ export const chatHelper = (name) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/student/getStudentByName",
+                url: Base_url + "/api/student/getStudentByName",
                 data: name
             })
             dispatch(chatHelp(data.result))
@@ -156,7 +156,7 @@ export const getStudentByRegName = (registrationNumber) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/student/getStudentByRegName",
+                url: Base_url + "/api/student/getStudentByRegName",
                 data: { registrationNumber }
             })
             dispatch(getStudentByRegNameHelper(data.result))
@@ -177,7 +177,7 @@ export const getOTPStudent = (studentEmail) => {
         try {
             await axios({
                 method: 'Post',
-                url: 'http://localhost:4000/api/student/forgotPassword',
+                url: Base_url + '/api/student/forgotPassword',
                 data: studentEmail
             })
             alert("Otp has been sent to your email")
@@ -198,7 +198,7 @@ export const submitOTPStudent = (newPasswordWithOtp, history) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: "http://localhost:4000/api/student/postOTP" ,
+                url: Base_url + "/api/student/postOTP" ,
                 data:newPasswordWithOtp
             })
             alert("Password Update, kindly login with updated password")
@@ -218,7 +218,7 @@ export const sendMessage = (room,messageobj) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: `http://localhost:4000/api/student/chat/${room}`,
+                url: Base_url + `/api/student/chat/${room}`,
                 data: messageobj
             })
         }
@@ -234,7 +234,7 @@ export const getPrivateConversation = (roomId) => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: `http://localhost:4000/api/student/chat/${roomId}`,
+                url: Base_url + `/api/student/chat/${roomId}`,
             })
             dispatch(privateConversation(data.result))
         }
@@ -249,7 +249,7 @@ export const getPrivateConversation2 = (roomId) => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: `http://localhost:4000/api/student/chat/${roomId}`,
+                url: Base_url + `/api/student/chat/${roomId}`,
             })
             dispatch(privateConversation2(data.result))
         }
@@ -264,7 +264,7 @@ export const previousChats = (senderName) => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: `http://localhost:4000/api/student/chat/previousChats/${senderName}`,
+                url: Base_url + `/api/student/chat/previousChats/${senderName}`,
             })
             dispatch(previousChatsHelper(data.result))
         }
@@ -280,7 +280,7 @@ export const newerChats = (receiverName) => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: `http://localhost:4000/api/student/chat/newerChats/${receiverName}`,
+                url: Base_url + `/api/student/chat/newerChats/${receiverName}`,
             })
             dispatch(newerChatsHelper(data.result))
         }
@@ -295,7 +295,7 @@ export const studentUpdate = (updatedData) => {
         try {
             const { data } = await axios({
                 method: 'Post',
-                url: `http://localhost:4000/api/student/updateProfile`,
+                url: Base_url + `/api/student/updateProfile`,
                 data: updatedData
             })
         }
@@ -310,7 +310,7 @@ export const getAllSubjects = () => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: "http://localhost:4000/api/student/getAllSubjects"
+                url: Base_url + "/api/student/getAllSubjects"
             })
             dispatch(getAllSubjectsHelper(data.result))
         }
@@ -325,7 +325,7 @@ export const fetchAttendence = () => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: "http://localhost:4000/api/student/checkAttendence"
+                url: Base_url + "/api/student/checkAttendence"
             })
             dispatch(fetchAttendenceHelper(data.result))
         }
@@ -341,7 +341,7 @@ export const getMarks = () => {
         try {
             const { data } = await axios({
                 method: 'Get',
-                url: "http://localhost:4000/api/student/getMarks"
+                url: Base_url + "/api/student/getMarks"
             })
            dispatch(getMarksHelper(data.result))
         }

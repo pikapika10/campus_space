@@ -88,7 +88,7 @@ const AttendenceFaculty = () => {
                                     <option>Select</option>
                                     <option value={store.faculty.faculty.faculty.department}>{store.faculty.faculty.faculty.department}</option>
                                 </select>
-                                {error.department && (<div classNameName="invalid-feedback">{error.department}</div>)}
+                                {error.department && (<div className="invalid-feedback">{error.department}</div>)}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="yearId">Year</label>
@@ -104,7 +104,7 @@ const AttendenceFaculty = () => {
                                     <option value="4">4</option>
                                 </select>
 
-                                {error.year && (<div classNameName="invalid-feedback">{error.year}</div>)}
+                                {error.year && (<div className="invalid-feedback">{error.year}</div>)}
                             </div>
                            
                             <div className="form-group">
@@ -122,7 +122,7 @@ const AttendenceFaculty = () => {
                                     <option value="E">E</option>
                                     <option value="F">F</option>
                                 </select>
-                                {error.section && (<div classNameName="invalid-feedback">{error.section}</div>)}
+                                {error.section && (<div className="invalid-feedback">{error.section}</div>)}
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-md-1">

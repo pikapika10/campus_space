@@ -22,7 +22,7 @@ const FacultyUpdatePassword = () => {
     }, [store.error])
     const formHandler = (e) => {
         e.preventDefault()
-        setIsLoading(true)
+        // setIsLoading(true)
         dispatch(facultyUpdatePassword({ registrationNumber: store.faculty.faculty.faculty.registrationNumber, oldPassword, newPassword, confirmNewPassword }))
     }
     useEffect(() => {
@@ -43,21 +43,21 @@ const FacultyUpdatePassword = () => {
                                             'is-invalid': error.oldPassword
 
                                         })} id="emailId" />
-                                    {error.oldPassword && (<div classNameName="invalid-feedback">{error.oldPassword}</div>)}
+                                    {error.oldPassword && (<div className="invalid-feedback">{error.oldPassword}</div>)}
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="passwordId">New Password</label>
                                     <input onChange={(e) => setNewPassword(e.target.value)} value={newPassword} className={classnames("form-control", {
                                         "is-invalid": error.newPassword
                                     })} type="password" id="passwordId" />
-                                    {error.newPassword && (<div classNameName="invalid-feedback">{error.newPassword}</div>)}
+                                    {error.newPassword && (<div className="invalid-feedback">{error.newPassword}</div>)}
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="passwordCId">Confirm New Password</label>
                                     <input onChange={(e) => setConfirmNewPassword(e.target.value)} value={confirmNewPassword} className={classnames("form-control", {
                                         "is-invalid": error.confirmNewPassword
                                     })}  type="password" id="passwordCId" />
-                                    {error.confirmNewPassword && (<div classNameName="invalid-feedback">{error.confirmNewPassword}</div>)}
+                                    {error.confirmNewPassword && (<div className="invalid-feedback">{error.confirmNewPassword}</div>)}
                                 </div>
                                 <button type="submit" className="btn btn-info btn-block ">Update Password</button>
                             </form>
