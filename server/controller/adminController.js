@@ -396,6 +396,11 @@ module.exports = {
     try {
       const { department } = req.body;
       const allFaculties = await Faculty.find({ department });
+      if(allFaculties.length===0){
+        throw res
+        .status(404)
+        .json({ message: "No data found!!" });
+      }
       res.status(200).json({ result: allFaculties });
     } catch (err) {
       console.log("Error in gettting all faculties", err.message);
@@ -405,6 +410,11 @@ module.exports = {
     try {
       const { department, year } = req.body;
       const allStudents = await Student.find({ department, year });
+      if(allStudents.length===0){
+        throw res
+        .status(404)
+        .json({ message: "No data found!!" });
+      }
       res.status(200).json({ result: allStudents });
     } catch (err) {
       console.log("Error in gettting all students", err.message);

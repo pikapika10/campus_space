@@ -1,14 +1,13 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import AdminHomeHelper from "../../Components/AdminHomeHelper";
 
-var Barcode = require('react-barcode');
+var Barcode = require("react-barcode");
 
 const AdminHome = () => {
   const store = useSelector((store) => store);
 
-	
   useEffect(() => {
     if (!store.admin.isAuthenticated) {
       history.push("/adminLogin");
@@ -31,7 +30,10 @@ const AdminHome = () => {
           <div className="container">
             <div className="row  mt-4 bg-light p-4 shadow-lg rounded-lg ">
               <div className="col-md-5 p-2 ">
-                <div className="card bg-white mx-auto" style={{maxWidth:"300px"}} >
+                <div
+                  className="card bg-white mx-auto"
+                  style={{ maxWidth: "300px" }}
+                >
                   <div className="bg-green rounded-top p-2 text-center font-weight-bold text-white">
                     Admin
                   </div>
@@ -66,20 +68,27 @@ const AdminHome = () => {
                           </tr>
                           <tr>
                             <th className="text-center">ID:</th>
-                            <td >{store.admin.admin.registrationNumber}</td>
+                            <td>{store.admin.admin.registrationNumber}</td>
                           </tr>
                         </tbody>
                       </table>
-											<div className="text-center"><Barcode value={store.admin.admin.registrationNumber } height="25" /></div>
+                      <div className="text-center">
+                        <Barcode
+                          value={store.admin.admin.registrationNumber}
+                          height="25"
+                          width="1"
+                        />
+                      </div>
                     </div>
                     {/* <Link to='/faculty/updateProfile'>UPDATE PROFILE</Link> */}
                   </div>
                 </div>
               </div>
               <div className="col-md-7  ">
-							<div className="p-2 rounded-top bg-info text-white text-center w-100 lead font-weight-bold">Admin details</div>
+                <div className="p-2 rounded-top bg-info text-white text-center w-100 lead font-weight-bold">
+                  Admin details
+                </div>
                 <table className="table border table-striped">
-									
                   <tbody>
                     <tr>
                       <th>Name</th>
