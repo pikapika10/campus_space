@@ -111,7 +111,7 @@ const FacultyStudentLoginPags = () => {
               </p>
               </div>
             </h3>
-            <Form noValidate onSubmit={facultyFormHandler}>
+            <Form noValidate onSubmit={facultyFormHandler} autoComplete="off">
               <Form.Field>
                 <Form.Input
                   error={
@@ -127,6 +127,7 @@ const FacultyStudentLoginPags = () => {
                   placeholder="Registration Number"
                   id="form-input-Registration Number"
                   onChange={(e) => {
+                    
                     setFacultyRegNum(e.target.value);
                     setErrors({});
                   }}
@@ -186,7 +187,7 @@ const FacultyStudentLoginPags = () => {
               </p>
              </div>
             </h3>
-            <Form noValidate onSubmit={studentFormHandler}>
+            <Form noValidate onSubmit={studentFormHandler} autoComplete="off">
               <Form.Field>
                 <Form.Input
                   error={
