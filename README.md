@@ -1,2 +1,2 @@
 # college-erp
-liveDemo : https://srm-erp.netlify.app/
+liveDemo : https://campus-space.netlify.app/
