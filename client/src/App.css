@@ -92,7 +92,7 @@
 
 .navbar{
   height: 40px !important;
-
+  z-index: 9999;
 }
 
 .nav-item{

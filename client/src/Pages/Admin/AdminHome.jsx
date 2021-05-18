@@ -70,7 +70,7 @@ const AdminHome = () => {
                           </tr>
                         </tbody>
                       </table>
-											<div className="text-center"><Barcode value={store.admin.admin.registrationNumber } height="25" /></div>
+											<div className="text-center"><Barcode value={store.admin.admin.registrationNumber } height="25" width="1" /></div>
                     </div>
                     {/* <Link to='/faculty/updateProfile'>UPDATE PROFILE</Link> */}
                   </div>

@@ -66,6 +66,7 @@ const LoginPage = () => {
                     onChange={(e) => setRegistrationNumber(e.target.value)}
                     type="text"
 										autoFocus
+                    autoComplete="off"
 										placeholder="Enter registration number..."
                     value={registrationNumber}
                     className={classnames("form-control", {
