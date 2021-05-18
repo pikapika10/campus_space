@@ -87,7 +87,7 @@ const Home = () => {
                 style={{ listStyle: "None" }}
                 onClick={logoutHandler}
                 type="button"
-                className="btn"
+                className="btn btn-outline-danger"
               >
                 <li> <i class="fas fa-sign-out-alt"></i>Logout</li>
               </button>
