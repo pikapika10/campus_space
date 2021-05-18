@@ -80,7 +80,7 @@ export const getOTPFaculty = (studentEmail) => {
         try {
             await axios({
                 method: 'Post',
-                url: 'http://localhost:4000/api/faculty/forgotPassword',
+                url: Base_url + '/api/faculty/forgotPassword',
                 data: studentEmail
             })
             alert("Otp has been sent to your email")
