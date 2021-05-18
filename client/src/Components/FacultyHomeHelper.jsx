@@ -89,7 +89,7 @@ const Home = () => {
                 type="button"
                 className="btn"
               >
-                <li>Logout</li>
+                <li> <i class="fas fa-sign-out-alt"></i>Logout</li>
               </button>
             </div>
           </nav>
