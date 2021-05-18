@@ -76,6 +76,8 @@ io.on('connection', (socket) => {
 app.use('/api/admin', adminRoutes)
 app.use('/api/faculty', facultyRoutes)
 app.use('/api/student', studentRoutes)
+app.use('/',(req,res)=>res.send("This is College Space Server"))
+
 
 
 
@@ -107,7 +109,4 @@ mongoose.connect( process.env.MONGO_URL,{ useNewUrlParser: true, useUnifiedTopol
 }).catch((err) => {
     console.log("Error in connecting to DataBase", err.message)
 })
-
-// process.env.MONGO_URL.replace("<password>", process.env.MONGO_PASSWORD
-// "mongodb://127.0.0.1:27017/frontEndProject"
 

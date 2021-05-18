@@ -66,6 +66,10 @@ if (window.localStorage.facultyJwtToken) {
   }
 }
 else if (window.localStorage.studentJwtToken) {
+  if(window.localStorage.studentJwtToken === "undefined"){
+    localStorage.clear();
+  }
+  console.log(window.localStorage);
   setAuthToken(localStorage.studentJwtToken);
   const decoded = jwt_decode(localStorage.studentJwtToken);
 
