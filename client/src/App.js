@@ -66,21 +66,23 @@ if (window.localStorage.facultyJwtToken) {
   }
 }
 else if (window.localStorage.studentJwtToken) {
-  if(window.localStorage.studentJwtToken === "undefined"){
-    localStorage.clear();
+  if (window.localStorage.studentJwtToken === "undefined"){
+   localStorage.clear();
+  } else{
+    console.log(window.localStorage);
+    setAuthToken(localStorage.studentJwtToken);
+    const decoded = jwt_decode(localStorage.studentJwtToken);
+  
+    store.dispatch(setStudentUser(decoded));
+  
+    // Check for expired token
+    const currentTime = Date.now() / 1000;
+    if (decoded.exp < currentTime) {
+      store.dispatch(studentLogout());
+      window.location.href = '/';
+    } 
   }
-  console.log(window.localStorage);
-  setAuthToken(localStorage.studentJwtToken);
-  const decoded = jwt_decode(localStorage.studentJwtToken);
-
-  store.dispatch(setStudentUser(decoded));
-
-  // Check for expired token
-  const currentTime = Date.now() / 1000;
-  if (decoded.exp < currentTime) {
-    store.dispatch(studentLogout());
-    window.location.href = '/';
-  } 
+ 
 }
 else if (window.localStorage.adminJwtToken) {
   setAuthToken(localStorage.adminJwtToken);
