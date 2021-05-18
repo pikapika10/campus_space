@@ -29,8 +29,8 @@ const StudentUpdateProfile = () => {
     if (e.target.files && e.target.files[0]) {
       let img = e.target.files[0];
       setAvatar(img);
-			let imageUrl=document.getElementById("outputId");
-			imageUrl.src = URL.createObjectURL(img);
+      let imageUrl = document.getElementById("outputId");
+      imageUrl.src = URL.createObjectURL(img);
     }
   };
   useEffect(() => {
@@ -38,7 +38,7 @@ const StudentUpdateProfile = () => {
     if (studentData.aadharCard) {
       setAadharCard(studentData.aadharCard);
     }
-		if (studentData.studentMobileNumber) {
+    if (studentData.studentMobileNumber) {
       setContactNumber(studentData.studentMobileNumber);
     }
     if (studentData.fatherName) {
@@ -52,8 +52,8 @@ const StudentUpdateProfile = () => {
     }
     if (studentData.avatar) {
       setAvatar(studentData.avatar);
-			let imageUrl=document.getElementById("outputId");
-			imageUrl.src = studentData.avatar;
+      let imageUrl = document.getElementById("outputId");
+      imageUrl.src = studentData.avatar;
     }
   }, []);
   useEffect(() => {
@@ -85,16 +85,26 @@ const StudentUpdateProfile = () => {
           <HomeHelper />
           <div className="container mt-5">
             <div className="row ">
-              <div className="col-md-5 w-100 m-auto" >
-								<div className="text-center"> 
-								<img className="bg-light border rounded" alt="" id="outputId" style={{height:"150px", width:"150px", objectFit:"contain"}} /></div>
+              <div className="col-md-5 w-100 m-auto">
+                <div className="text-center">
+                  <img
+                    className="bg-light border rounded"
+                    alt=""
+                    id="outputId"
+                    style={{
+                      height: "150px",
+                      width: "150px",
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
                 <form onSubmit={formHandler}>
                   <div className="form-group">
                     <label htmlFor="inputId">Profile Picture</label>
                     <input
                       className="form-control"
                       type="file"
-											accept=".jpg,.png,.jpeg"
+                      accept=".jpg,.png,.jpeg"
                       id="inputId"
                       onChange={imagehandler}
                     ></input>
@@ -105,7 +115,7 @@ const StudentUpdateProfile = () => {
                       onChange={(e) => setGender(e.target.value)}
                       className="form-control"
                       id="genderId"
-											value={gender}
+                      value={gender}
                     >
                       <option>Select</option>
                       <option value="Male">Male</option>
@@ -118,7 +128,7 @@ const StudentUpdateProfile = () => {
                     <input
                       onChange={(e) => setContactNumber(e.target.value)}
                       type="number"
-											value={studentMobileNumber}
+                      value={studentMobileNumber}
                       className="form-control"
                       id="numberId"
                     />
@@ -128,7 +138,7 @@ const StudentUpdateProfile = () => {
                     <input
                       onChange={(e) => setFatherName(e.target.value)}
                       type="text"
-											value={fatherName}
+                      value={fatherName}
                       className="form-control"
                       id="fatherId"
                     />
@@ -138,7 +148,7 @@ const StudentUpdateProfile = () => {
                     <input
                       onChange={(e) => setFatherMobileNumber(e.target.value)}
                       type="number"
-											value={fatherMobileNumber}
+                      value={fatherMobileNumber}
                       className="form-control"
                       id="fathercnId"
                     />

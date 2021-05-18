@@ -5,7 +5,7 @@ import { facultyLogin } from "../redux/action/facultyAction";
 import { studentLogin } from "../redux/action/studentAction";
 import classnames from "classnames";
 import StudentLoginLogo from "../Style/Images/student-login.svg";
-import Logo from "../Style/Images/Logo.png"
+import Logo from "../Style/Images/Logo.png";
 
 import { Button, Form } from "semantic-ui-react";
 
@@ -20,8 +20,7 @@ const FacultyStudentLoginPags = () => {
   const [studentPassword, setStudentPassword] = useState("");
   const [errors, setErrors] = useState({});
   const [errorsHelper, setErrorsHelper] = useState({});
-  const [isFacultyLoading, setIsFacultyLoading] = useState(false);
-  const [isStudentLoading, setIsStudentLoading] = useState(false);
+  const [isLogging, setIsLogging] = useState(false)
 
   const [showFacultyLogin, setShowFacultyLogin] = useState(false);
 
@@ -38,7 +37,7 @@ const FacultyStudentLoginPags = () => {
       setErrors(store.error);
     }
   }, [store.error]);
-  
+
   useEffect(() => {
     if (store.student.isAuthenticated) {
       history.push("/home");
@@ -53,41 +52,28 @@ const FacultyStudentLoginPags = () => {
 
   const facultyFormHandler = (e) => {
     e.preventDefault();
-    setIsFacultyLoading(true);
+    if(isLogging) return;
+    setIsLogging(true);
     dispatch(
       facultyLogin({
         registrationNumber: facultyRegNum,
         password: facultyPassword,
       })
-    );
+    ).then(()=> setIsLogging(false));
   };
 
-  useEffect(() => {
-    if (store.error || store.faculty.isAuthenticated) {
-      setIsFacultyLoading(false);
-    } else {
-      setIsFacultyLoading(true);
-    }
-  }, [store.error, store.faculty.isAuthenticated]);
 
   const studentFormHandler = (e) => {
     e.preventDefault();
-    setIsStudentLoading(true);
+    if(isLogging) return;
+    setIsLogging(true);
     dispatch(
       studentLogin({
         registrationNumber: studentRegNum,
         password: studentPassword,
       })
-    );
+    ).then(()=> setIsLogging(false));
   };
-
-  useEffect(() => {
-    if (store.errorHelper || store.student.isAuthenticated) {
-      setIsStudentLoading(false);
-    } else {
-      setIsStudentLoading(false);
-    }
-  }, [store.errorHelper, store.student.isAuthenticated]);
 
   return (
     <div className="row mx-0" id="trail" style={{ height: "100vh" }}>
@@ -100,25 +86,30 @@ const FacultyStudentLoginPags = () => {
       >
         <img src={Logo} alt="Logo" height="35px" />
       </span>
-      <div className="col-6 m-auto text-center">
+      <div className="col-6 m-auto text-center d-none d-md-block ">
         <img src={StudentLoginLogo} alt="StudentLoginLogo" height="400px" />
       </div>
       <div
         className="col-md-5 px-5 m-auto bg-light rounded pt-5"
         style={{
-          height: "90vh",
+          height: "85vh",
           overflowY: "auto",
         }}
       >
         {showFacultyLogin ? (
           <div>
-            <h3 className=" jumbotron text-secondary">
-              <h2 className="text-dark">Faculty Login</h2>
-              <p>
+            <h3 className=" jumbotron text-secondary py-3">
+            <div className="text-center" >
+             <img src="https://www.freepnglogos.com/uploads/teacher-png/teacher-teachers-icon-flatastic-iconset-custom-icon-design-36.png" className="" height="100px" width="100px" />
+             </div >
+             <div className="text-center" >
+              <h2 className="text-dark my-1">Faculty Login</h2>
+              <p className="my-1" >
                 <small>
-                  Please login using your registraion number and password...
+                  Please login using your registration number and password...
                 </small>
               </p>
+              </div>
             </h3>
             <Form noValidate onSubmit={facultyFormHandler}>
               <Form.Field>
@@ -167,7 +158,7 @@ const FacultyStudentLoginPags = () => {
               </Form.Field>
               <div className="text-right">
                 <Button type="submit" primary>
-                  <i class="fas fa-sign-in-alt mr-1"></i>Login
+                  {isLogging?<i class="fas fa-spinner fa-spin mx-3"></i> :<><i class="fas fa-sign-in-alt mr-1"></i> Login</>}
                 </Button>
               </div>
             </Form>
@@ -182,13 +173,18 @@ const FacultyStudentLoginPags = () => {
           </div>
         ) : (
           <div>
-            <h3 className=" jumbotron text-secondary">
-              <h2 className="text-dark">Student Login</h2>
-              <p>
+            <h3 className=" jumbotron text-secondary py-3">
+             <div className="text-center" >
+             <img src="https://lh3.googleusercontent.com/proxy/o7EnvBtdur1RaA4mX0S2o4ItCwskxzGPVql7IzjL5JihEiJ0soOBEtswtIU-lkw82qmayp944YIXxDb4EUrVv8qF1JY052UtybAzIYr0Pohcp8jgXJuS7QuPyIkTdRQn1-_xxzhttIPE4jF2dmZRy9OrW8O_Fr8D" className="" height="100px" width="100px" />
+             </div >
+             <div className="text-center" >
+             <h2 className="text-dark my-1">Student Login</h2>
+              <p className="my-1" >
                 <small>
-                  Please login using your registraion number and password...
+                  Please login using your registration number and password...
                 </small>
               </p>
+             </div>
             </h3>
             <Form noValidate onSubmit={studentFormHandler}>
               <Form.Field>
@@ -237,7 +233,8 @@ const FacultyStudentLoginPags = () => {
               </Form.Field>
               <div className="text-right">
                 <Button type="submit" primary>
-                  <i class="fas fa-sign-in-alt mr-1"></i>Login
+                  
+                {isLogging?<i class="fas fa-spinner fa-spin mx-3"></i> :<><i class="fas fa-sign-in-alt mr-1"></i> Login</>}
                 </Button>
               </div>
             </Form>

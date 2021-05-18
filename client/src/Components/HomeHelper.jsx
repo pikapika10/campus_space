@@ -32,7 +32,12 @@ const Home = () => {
         <div className="col">
           <nav className="navbar navbar-expand-lg navbar-light  bg-light">
             <span>
-              <img style={{filter:"invert(1)"}} src={Logo} alt="Logo" height="25px" />
+              <img
+                style={{ filter: "invert(1)" }}
+                src={Logo}
+                alt="Logo"
+                height="25px"
+              />
             </span>{" "}
             <button
               className="navbar-toggler"
@@ -124,9 +129,9 @@ const Home = () => {
                 style={{ listStyle: "none" }}
                 onClick={logoutHandler}
                 type="button"
-                className="btn"
+                className="btn btn-outline-danger"
               >
-                <li>Logout</li>
+                <li> <i class="fas fa-sign-out-alt"></i>Logout</li>
               </button>
             </div>
           </nav>

@@ -19,8 +19,8 @@ const FacultyUpdateProfile = () => {
     if (e.target.files && e.target.files[0]) {
       let img = e.target.files[0];
       setAvatar(img);
-			let imageUrl=document.getElementById("outputId");
-			imageUrl.src = URL.createObjectURL(img);
+      let imageUrl = document.getElementById("outputId");
+      imageUrl.src = URL.createObjectURL(img);
     }
   };
 
@@ -39,23 +39,23 @@ const FacultyUpdateProfile = () => {
     history.push("/");
   };
 
-	useEffect(()=>{
-		let facultyData= store.faculty.faculty.faculty
-		if(facultyData.facultyMobileNumber){
-			setContactNumber(facultyData.facultyMobileNumber)
-		}
-		if(facultyData.gender){
-			setGender(facultyData.gender)
-		}
-		if(facultyData.aadharCard){
-			setAadharCard(facultyData.aadharCard)
-		}
-		if(facultyData.avatar){
-			setAvatar(facultyData.avatar)
-			let imageUrl=document.getElementById("outputId");
-			imageUrl.src = facultyData.avatar;
-		}
-	},[])
+  useEffect(() => {
+    let facultyData = store.faculty.faculty.faculty;
+    if (facultyData.facultyMobileNumber) {
+      setContactNumber(facultyData.facultyMobileNumber);
+    }
+    if (facultyData.gender) {
+      setGender(facultyData.gender);
+    }
+    if (facultyData.aadharCard) {
+      setAadharCard(facultyData.aadharCard);
+    }
+    if (facultyData.avatar) {
+      setAvatar(facultyData.avatar);
+      let imageUrl = document.getElementById("outputId");
+      imageUrl.src = facultyData.avatar;
+    }
+  }, []);
 
   useEffect(() => {
     if (store.faculty.updateProfileFlag) {
@@ -70,8 +70,18 @@ const FacultyUpdateProfile = () => {
           <div className="container mt-5">
             <div className="row ">
               <div className="col-md-5 w-100 m-auto">
-							<div className="text-center"> 
-								<img className="bg-light border rounded" alt="" id="outputId" style={{height:"150px", width:"150px", objectFit:"contain"}} /></div>
+                <div className="text-center">
+                  <img
+                    className="bg-light border rounded"
+                    alt=""
+                    id="outputId"
+                    style={{
+                      height: "150px",
+                      width: "150px",
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
                 <form onSubmit={formHandler}>
                   <div className="form-group">
                     <label htmlFor="inputId">Profile Picture</label>
@@ -89,7 +99,7 @@ const FacultyUpdateProfile = () => {
                       onChange={(e) => setGender(e.target.value)}
                       className="form-control"
                       id="genderId"
-											value={gender}
+                      value={gender}
                     >
                       <option>Select</option>
                       <option value="Male">Male</option>
@@ -104,7 +114,7 @@ const FacultyUpdateProfile = () => {
                       type="number"
                       className="form-control"
                       id="numberId"
-											value={facultyMobileNumber}
+                      value={facultyMobileNumber}
                     />
                   </div>
                   <div className="form-group">
@@ -114,7 +124,7 @@ const FacultyUpdateProfile = () => {
                       type="number"
                       className="form-control"
                       id="aadharId"
-											value={aadharCard}
+                      value={aadharCard}
                     />
                   </div>
                   <div class="row justify-content-center">

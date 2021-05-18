@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import HomeHelper from "../Components/HomeHelper";
 import { Link, useHistory } from "react-router-dom";
+import { Base_url } from "../Config/Api";
 
 const StudentDetails = () => {
   const store = useSelector((store) => store);
@@ -18,12 +19,12 @@ const StudentDetails = () => {
     try {
       const { data } = await axios({
         method: "Post",
-        url: "http://localhost:4000/api/student/getAllStudents",
+        url: Base_url + "/api/student/getAllStudents",
         data: {
           department,
           year,
           section,
-					regNumber:store.student.student.student.registrationNumber
+          regNumber: store.student.student.student.registrationNumber,
         },
       });
       setResult(data.result);
@@ -36,7 +37,7 @@ const StudentDetails = () => {
     try {
       const { data } = await axios({
         method: "Post",
-        url: "http://localhost:4000/api/student/getStudentByName",
+        url: Base_url + "/api/student/getStudentByName",
         data: {
           name,
         },
@@ -224,13 +225,15 @@ const StudentDetails = () => {
                     </tbody>
                   </table>
                 </div>
-								<div className="text-center w-100">
-								<span className="btn btn-dark btn-sm mt-3" onClick={()=>setResult([])}>
-												 Back
-								</span>
-								</div>
+                <div className="text-center w-100">
+                  <span
+                    className="btn btn-dark btn-sm mt-3"
+                    onClick={() => setResult([])}
+                  >
+                    Back
+                  </span>
+                </div>
               </div>
-
             )}
           </div>
         </>

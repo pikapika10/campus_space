@@ -103,7 +103,7 @@ const AdminGetAllFaculty = () => {
                         <span class="sr-only">Loading...</span>
                       </div>
                     ) : (
-                     store.error?.message
+                      store.error?.message
                     )}
                   </div>
                 )}

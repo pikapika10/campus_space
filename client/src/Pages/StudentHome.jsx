@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import HomeHelper from "../Components/HomeHelper";
-import Barcode from "react-barcode"
+import Barcode from "react-barcode";
 
 const Home = () => {
   const store = useSelector((store) => store);
@@ -15,57 +15,71 @@ const Home = () => {
           <HomeHelper />
           <div className="container">
             <div className="row">
-              
               <div className="col-md-12 mt-5">
                 <div className="row">
-							<div className="col-md-5">
-							<div className="card bg-white mx-auto" style={{maxWidth:"300px"}} >
-                  <div className="bg-green rounded-top p-2 text-center font-weight-bold text-white">
-                    Admin
-                  </div>
-                  <div className="bg-info text-center admin-card">
-                    <img
-                      className="  bg-white border rounded-circle my-3"
-                      style={{
-                        height: "150px",
-                        width: "150px",
-                        objectFit: "contain",
-                      }}
-                      src={store.student.student.student.avatar}
-                      alt="Card image cap"
-                    />
-                  </div>
-                  <div className="bg-info text-left">
-                    <div className="admin-card-bottom bg-white py-3 px-3">
-                      <table className="table table-borderless mb-0">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div
-                                className="rounded-circle border bg-green text-blue text-center p-2 font-18"
-                                style={{ height: "40px", width: "40px" }}
-                              >
-                                <i class="fas fa-user"></i>
-                              </div>
-                            </td>
-                            <td className="lead pt-3">
-                              {store.student.student.student.name}
-                            </td>
-                          </tr>
-                          <tr>
-                            <th className="text-center">ID:</th>
-                            <td >{store.student.student.student.registrationNumber}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-											<div className="text-center"><Barcode value={store.student.student.student.registrationNumber } height="25" width="1" /></div>
+                  <div className="col-md-5">
+                    <div
+                      className="card bg-white mx-auto"
+                      style={{ maxWidth: "300px" }}
+                    >
+                      <div className="bg-green rounded-top p-2 text-center font-weight-bold text-white">
+                        Admin
+                      </div>
+                      <div className="bg-info text-center admin-card">
+                        <img
+                          className="  bg-white border rounded-circle my-3"
+                          style={{
+                            height: "150px",
+                            width: "150px",
+                            objectFit: "contain",
+                          }}
+                          src={store.student.student.student.avatar}
+                          alt="Card image cap"
+                        />
+                      </div>
+                      <div className="bg-info text-left">
+                        <div className="admin-card-bottom bg-white py-3 px-3">
+                          <table className="table table-borderless mb-0">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <div
+                                    className="rounded-circle border bg-green text-blue text-center p-2 font-18"
+                                    style={{ height: "40px", width: "40px" }}
+                                  >
+                                    <i class="fas fa-user"></i>
+                                  </div>
+                                </td>
+                                <td className="lead pt-3">
+                                  {store.student.student.student.name}
+                                </td>
+                              </tr>
+                              <tr>
+                                <th className="text-center">ID:</th>
+                                <td>
+                                  {
+                                    store.student.student.student
+                                      .registrationNumber
+                                  }
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div className="text-center">
+                            <Barcode
+                              value={
+                                store.student.student.student.registrationNumber
+                              }
+                              height="25"
+                              width="1"
+                            />
+                          </div>
+                        </div>
+                        {/* <Link to='/faculty/updateProfile'>UPDATE PROFILE</Link> */}
+                      </div>
                     </div>
-                    {/* <Link to='/faculty/updateProfile'>UPDATE PROFILE</Link> */}
                   </div>
-                </div>
-               
-							</div>
-							<div className="col-md-7 bg-dark  text-white">
+                  <div className="col-md-7 bg-dark  text-white">
                     <table className="table ">
                       <tbody className="text-white">
                         <tr>

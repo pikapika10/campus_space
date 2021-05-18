@@ -8,6 +8,7 @@ import {
 } from "../redux/action/studentAction";
 import io from "socket.io-client";
 import { useHistory } from "react-router-dom";
+import { Base_url } from "../Config/Api";
 
 //Swap HelperFunction
 function swap(input, value_1, value_2) {
@@ -29,7 +30,7 @@ const Chat = (props) => {
   const [message, setMessage] = useState("");
   const [messageArray, setMessageArray] = useState([]);
   const [olderMessages, setOlderMessages] = useState([]);
-  const ENDPOINT = "http://localhost:4000";
+  const ENDPOINT = Base_url;
 
   useEffect(() => {
     let temp = props.match.params.room;

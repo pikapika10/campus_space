@@ -3,7 +3,7 @@ import { Link, NavLink, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { adminLogout } from "../redux/action/adminAction";
 import Logo from "../Style/Images/Logo.png";
-import { withRouter } from 'react-router';
+import { withRouter } from "react-router";
 
 const Home = () => {
   const store = useSelector((store) => store);
@@ -52,14 +52,14 @@ const Home = () => {
             </li>
             <li className="nav-item">
               <button type="button" className="btn">
-                <NavLink exact to="/admin/addFaculty"  activeClassName="active">
+                <NavLink exact to="/admin/addFaculty" activeClassName="active">
                   <li>Add faculty</li>
                 </NavLink>
               </button>
             </li>
             <li className="nav-item">
               <button type="button" className="btn">
-                <NavLink exact to="/admin/addStudent"  activeClassName="active">
+                <NavLink exact to="/admin/addStudent" activeClassName="active">
                   <li>Add student</li>
                 </NavLink>
               </button>

@@ -18,12 +18,13 @@ const AdminGetAllFaculty = () => {
   const formHandler = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    dispatch(adminGetAllStudent({ department, year })).then(()=>setIsLoading(false));
+    dispatch(adminGetAllStudent({ department, year })).then(() =>
+      setIsLoading(false)
+    );
   };
 
   useEffect(() => {
     // if (store.admin.allStudent.length !== 0) {
-      
     // }
   }, [store.admin.allStudent.length]);
   return (

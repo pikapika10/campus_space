@@ -36,24 +36,26 @@ const Home = () => {
                       <th scope="col">Attendence</th>
                     </tr>
                   </thead>
-                  {store.student.attendence.length?  <tbody>
-                   { store.student.attendence.map((res, index) => (
-                      <tr key={index}>
-                        <th scope="row">{index + 1}</th>
-                        <td>{res.subjectCode}</td>
-                        <td>{res.subjectName}</td>
-                        <td>{res.maxHours}</td>
-                        <td>{res.lectureAttended}</td>
-                        <td>{res.absentHours}</td>
-                        <td>{res.totalLecturesByFaculty}</td>
-                        <td>{res.attendence}%</td>
-                      </tr>
-                    ))
-                    
-                    }</tbody>
-                    
-                    : <div className="my-2 col-12 text-center text-primary font-weight-bold ">Not found!</div>}
-                  
+                  {store.student.attendence.length ? (
+                    <tbody>
+                      {store.student.attendence.map((res, index) => (
+                        <tr key={index}>
+                          <th scope="row">{index + 1}</th>
+                          <td>{res.subjectCode}</td>
+                          <td>{res.subjectName}</td>
+                          <td>{res.maxHours}</td>
+                          <td>{res.lectureAttended}</td>
+                          <td>{res.absentHours}</td>
+                          <td>{res.totalLecturesByFaculty}</td>
+                          <td>{res.attendence}%</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  ) : (
+                    <div className="my-2 col-12 text-center text-primary font-weight-bold ">
+                      Not found!
+                    </div>
+                  )}
                 </table>
               </div>
             </div>
