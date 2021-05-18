@@ -86,8 +86,13 @@
   background-color: #dfdbff !important;
   
   border-radius: 6px !important;
-  color:#17a2b8!important !important;
+  color:#17a2b8!important ;
   font-weight: 600;
+}
+
+.navbar{
+  height: 40px !important;
+
 }
 
 .nav-item{

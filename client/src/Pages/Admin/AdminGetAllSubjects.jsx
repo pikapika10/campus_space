@@ -18,12 +18,12 @@ const AdminGetAllSubjects = () => {
     const formHandler = (e) => {
         e.preventDefault()
         setIsLoading(true)
-        dispatch(adminGetAllSubject({ department, year }))
+        dispatch(adminGetAllSubject({ department, year })).then(()=>setIsLoading(false));
 
     }
     useEffect(() => {
         if (store.admin.allSubject.length !== 0) {
-            setIsLoading(false)
+            
         }
 
     }, [store.admin.allSubject.length])

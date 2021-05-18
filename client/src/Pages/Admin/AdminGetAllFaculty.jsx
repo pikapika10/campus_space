@@ -16,13 +16,12 @@ const AdminGetAllFaculty = () => {
   const formHandler = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    dispatch(adminGetAllFaculty({ department })).then(()=>
-		
-    setIsLoading(false));
+    dispatch(adminGetAllFaculty({ department })).then(() =>
+      setIsLoading(false)
+    );
   };
 
-  useEffect(() => {
-  }, [store.admin.allFaculty.length]);
+  // useEffect(() => {}, [store.admin.allFaculty.length]);
 
   return (
     <div>
@@ -93,13 +92,21 @@ const AdminGetAllFaculty = () => {
                         </tr>
                       ))}
                     </tbody>
-                  </table>):<div className="pt-5 text-center text-danger" >
-									{isLoading ? (
-                        <div class="spinner-border text-primary text-center" role="status">
-                          <span class="sr-only">Loading...</span>
-                        </div>
-                      ) :"Not data found!"}</div>
-									}
+                  </table>
+                ) : (
+                  <div className="pt-5 text-center text-danger">
+                    {isLoading ? (
+                      <div
+                        class="spinner-border text-primary text-center"
+                        role="status"
+                      >
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                    ) : (
+                     store.error?.message
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </div>
