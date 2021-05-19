@@ -176,7 +176,7 @@ const FacultyStudentLoginPags = () => {
           <div>
             <h3 className=" jumbotron text-secondary py-3">
              <div className="text-center" >
-             <img src="https://ibb.co/9tHm6Tv][img]https://i.ibb.co/2N30xt6/400-4003680-registration-for-under-graduate-student-icon-png-min.png" className="" height="100px" width="100px" />
+             <img src="https://i.ibb.co/2N30xt6/400-4003680-registration-for-under-graduate-student-icon-png-min.png" className="" height="100px" width="100px" />
              </div >
              <div className="text-center" >
              <h2 className="text-dark my-1">Student Login</h2>
