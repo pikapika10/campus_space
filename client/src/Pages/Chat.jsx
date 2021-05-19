@@ -126,7 +126,7 @@ const Chat = (props) => {
                   overflowY: "auto",
                 }}
               >
-                {store.student.privateChat.map((obj, index) => (
+                {store.student?.privateChat.map((obj, index) => (
                   <div
                     key={index}
                     className={` p-2 text-light rounded-lg shadow m-1 my-2 ${

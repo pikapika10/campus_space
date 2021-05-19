@@ -224,7 +224,11 @@ export const getPrivateConversation = (roomId) => {
         method: "Get",
         url: Base_url + `/api/student/chat/${roomId}`,
       });
+      console.log(data.result);
+      if(data.result){
+        
       dispatch(privateConversation(data.result));
+      }
     } catch (err) {
       console.log("Error in sending message", err.message);
     }
@@ -238,7 +242,10 @@ export const getPrivateConversation2 = (roomId) => {
         method: "Get",
         url: Base_url + `/api/student/chat/${roomId}`,
       });
+      if(data.result){
+        
       dispatch(privateConversation2(data.result));
+      }
     } catch (err) {
       console.log("Error in sending message", err.message);
     }
