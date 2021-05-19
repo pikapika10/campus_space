@@ -23,7 +23,7 @@ const Home = () => {
                       style={{ maxWidth: "300px" }}
                     >
                       <div className="bg-green rounded-top p-2 text-center font-weight-bold text-white">
-                        Admin
+                        Student
                       </div>
                       <div className="bg-info text-center admin-card">
                         <img

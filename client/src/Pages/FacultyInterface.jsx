@@ -24,7 +24,7 @@ const FacultyInterface = () => {
                       style={{ maxWidth: "300px" }}
                     >
                       <div className="bg-green rounded-top p-2 text-center font-weight-bold text-white">
-                        Admin
+                        Faculty
                       </div>
                       <div className="bg-info text-center admin-card">
                         <img
