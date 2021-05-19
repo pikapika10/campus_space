@@ -1,2 +1,2 @@
-# campus-space
-liveDemo : https://campus-space.netlify.app/
+# college-space
+liveDemo : https://college-space.netlify.app/
