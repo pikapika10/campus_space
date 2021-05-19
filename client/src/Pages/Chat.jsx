@@ -19,6 +19,8 @@ function swap(input, value_1, value_2) {
 
 let socket;
 
+
+
 const Chat = (props) => {
   const store = useSelector((store) => store);
   const history = useHistory();
@@ -31,6 +33,14 @@ const Chat = (props) => {
   const [messageArray, setMessageArray] = useState([]);
   const [olderMessages, setOlderMessages] = useState([]);
   const ENDPOINT = Base_url;
+  let messageContainer = document.querySelector(".scrollingContainer")
+
+  const scrollToBottom=()=>{
+    if(messageContainer){
+
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+  }
 
   useEffect(() => {
     let temp = props.match.params.room;
@@ -41,11 +51,12 @@ const Chat = (props) => {
     swap(tempArr, 0, 1);
     let tempRoom2 = tempArr[0] + "." + tempArr[1];
     setRoom2(tempRoom2);
+    
   }, [ENDPOINT, props.match.params.room]);
 
   useEffect(() => {
-    dispatch(getPrivateConversation(room1));
-    dispatch(getPrivateConversation2(room2));
+    dispatch(getPrivateConversation(room1)).then(()=>scrollToBottom());
+    dispatch(getPrivateConversation2(room2)).then(()=>scrollToBottom());
     socket = io(ENDPOINT);
     socket.emit("join room", {
       room1,
@@ -57,10 +68,7 @@ const Chat = (props) => {
         "https://d6cp9b00-a.akamaihd.net/downloads/ringtones/files/dl/mp3/beep-para-celular-30244.mp3"
       ).play();
       setMessageArray([...messageArray, data]);
-      window.scrollTo(
-        9999,
-        document.querySelector(".scrollingContainer").scrollHeight
-      );
+      
     });
     return () => {
       socket.emit("disconnect");
@@ -104,10 +112,8 @@ const Chat = (props) => {
 
       setOlderMessages(store.student.privateChat);
       setMessageArray([...messageArray, data]);
-      window.scrollTo(
-        9999,
-        document.querySelector(".scrollingContainer").scrollHeight
-      );
+      scrollToBottom()
+        
     });
   }, [messageArray, olderMessages]);
 
@@ -123,7 +129,7 @@ const Chat = (props) => {
                 style={{
                   minHeight: "400px",
                   height: "500px",
-                  overflowY: "auto",
+                  overflowY: "scroll",
                 }}
               >
                 {store.student?.privateChat.map((obj, index) => (
@@ -171,13 +177,13 @@ const Chat = (props) => {
                 <form onSubmit={formHandler}>
                   <div className="form-group mt-2">
                     {/* <input value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type here.." type="text" className="form-control" /> */}
-                    <textarea
+                    <input
                       className="form-control"
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Type here.."
+                      placeholder="Type a message"
                       type="text"
-                      className="form-control"
+                      className="form-control form-control-lg"
                     />
                   </div>
                   <div className="text-right">
